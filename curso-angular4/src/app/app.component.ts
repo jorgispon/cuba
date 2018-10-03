@@ -6,5 +6,5 @@ import { Component } from '@angular/core'; // <-- PAQUETE QUE INSTALA NPM
   styleUrls: ['./app.component.css'] // <-- DEFINIMOS SERIE DE FICHEROS CSS, ESTE SOLO SERA VISIBLE EN EL COMPONENTE EN CUESTIÓN
 })
 export class AppComponent {
-  title = 'curso-angular4';
+  title = 'Component base principal';
 }
