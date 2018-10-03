@@ -26,7 +26,20 @@ export class FrutaComponent{
     ngOnInit(){ //PRIMER MÉTODO QUE SE LANZA TRAS EL CONSTRUCTOR, IDEAL PARA LLAMADAS AJAX A SERVICIOS Y COSAS ASÍ
         this.cambiarNombre(); //NO ES UNA BUENA PRÁCTICA LLAMAR A LOS MÉTODOS DENTRO DEL CONSTRUCTOR, PARA ELLO TENEMOS EL MÉTODO ngOnInit
         this.cambiarEdad(45);
-        alert(this.nombre + " tiene " + this.edad + " años.");
+        console.log(this.nombre + " tiene " + this.edad + " años.");
+
+        //Variables y alcance (nivel bloque codigo/instruccion o alcance global)
+        var uno = 8;
+        var dos = 15;
+
+        if(uno === 8){
+            let uno = 3; //LA VARIABLE LET ACTUA DENTRO DEL BLOQUE DE CODIGO DEL IF, NO FUERA DEL IF, NI ANTES NI DESPUES
+            var dos = 88;
+            console.log("DENTRO DEL IF: " + uno);
+        }
+
+        console.log("FUERA DEL IF: " + uno);
+
     }
 
     cambiarNombre(nombre){
