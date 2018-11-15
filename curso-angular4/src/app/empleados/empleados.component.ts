@@ -13,6 +13,7 @@ export class EmpleadosComponent{
     public trabajadores:Array<Empleado>;
     public trabajador_externo:boolean;
     public color:string;
+    public color_seleccionado:string;
 
     constructor(){
         this.empleado = new Empleado('Jordi Gisbert Ponsoda', 23, 'Programador', true);
@@ -24,6 +25,7 @@ export class EmpleadosComponent{
 
         this.trabajador_externo = true;
         this.color = 'blue'; //Según el color que ponga yo aquí el ngSwitch actuará y lo modificará -->
+        this.color_seleccionado = '#D8D8D8';
     }
 
     ngOnInit(){
@@ -33,5 +35,9 @@ export class EmpleadosComponent{
 
     cambiarExterno(valor){
         this.trabajador_externo = valor;
+    }
+
+    logColorSeleccionado(){
+        console.log(this.color_seleccionado);
     }
 }

@@ -25,6 +25,10 @@
   </ul>
 </div>
 
+
+<hr/>
+
+<!-- USO DE LA DIRECTIVA ngFor -->
 <h3>Listado de empleados</h3>
 <ul>
   <li *ngFor="let empleado of trabajadores">
@@ -40,6 +44,9 @@
   </li>
 </ul>
 
+<hr/>
+
+<!-- USO DE LA DIRECTIVA ngSwitch -->
 <h3>
   Colores switch</h3>
 <ul [ngSwitch]="color">
@@ -59,3 +66,21 @@
               'color':'white',
               'padding':'20px'}">Es de color AZUL</li>
 </ul>
+
+<hr/>
+
+<!-- Two Way Data Binding -->
+<h3>Selector de colores:</h3>
+<button (click)="logColorSeleccionado()">MOSTRAR LOG</button>
+<!-- Con ngModel le decimos que propiedad del modelo de datos vamos a modificar, en este caso el color_seleccionado, y se modificará visualmente y en el modelo de datos -->
+<input type="text" [(ngModel)]="color_seleccionado"/>
+<pre>
+    <strong>Color elegido:</strong>
+    {{color_seleccionado}}
+</pre>
+<div [ngStyle]="{
+    'background':color_seleccionado,
+    'width':'200px',
+    'height':'200px',
+    'float':'right',
+    'margin-right':'70%'}"></div>
