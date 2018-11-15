@@ -13,4 +13,8 @@ export class PlantillasComponent{
         this.titulo = "Plantillas ngTemplate en Angular";
         this.administrador = true;
     }
+
+    cambiar(value){
+        this.administrador = value;
+    }
 }
