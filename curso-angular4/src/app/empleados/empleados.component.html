@@ -75,7 +75,11 @@
 <!-- Con ngModel le decimos que propiedad del modelo de datos vamos a modificar, en este caso el color_seleccionado, y se modificará visualmente y en el modelo de datos -->
 <input type="text" [(ngModel)]="color_seleccionado"/>
 <!-- Aquí lo que se hace es comprobar el color introducido, en este caso, si es rojo, ponemos un borde negro, en caso de no ser rojo, se pone uno blanco -->
-<pre [style.border]="color_seleccionado == 'red' ? '5px solid black' : '5px solid white'"> <!-- Si es rojo ponme un borde negro, sino, ponlo blanco -->
+<!-- Si probamos lo que hay justo debajo, no hará lo de BordeAzul ya que el style.border es prioritario, para ello en el CSS le ponemos a la clase BordeAzul un !important -->
+<pre
+    [style.border]="color_seleccionado == 'red' ? '5px solid black' : '5px solid white'"
+    [class.fondoAzul]="color_seleccionado == 'blue'"
+> <!-- Si es rojo ponme un borde negro, sino, ponlo blanco -->
     <strong>Color elegido:</strong>
     {{color_seleccionado}}
 </pre>
