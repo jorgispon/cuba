@@ -3,3 +3,9 @@
 <div *ngIf="parametro">
     Parámetro de la URL: {{parametro}}
 </div>
+
+<!-- Cuando no exista el parámetro, ir a la página con parámetro -->
+<div *ngIf="!parametro">
+    <button (click)="redirigir()">Ir a la página con parámetro</button>
+    <button (click)="redirigirHome()">Ir al Home</button>
+</div>
