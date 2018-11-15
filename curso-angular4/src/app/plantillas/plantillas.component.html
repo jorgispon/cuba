@@ -1,10 +1,15 @@
 <h4>{{titulo}}</h4>
 
+<!-- Cuando la condicion se cumpla, cargame la template ADMIN, cuando no se cumpla cargame la template NOADMIN -->
 
-<div *ngIf="administrador; else noAdmin">
+<div *ngIf="administrador; then admin else noAdmin">
+</div>
+
+<ng-template #admin>
     <button (click)="cambiar(false)">Cambiar</button>
     <strong style="background:yellow;">Eres el administrador de la webapp</strong>
-</div>
+</ng-template>
+
 
 <!-- Esto no se ve, simplemente se activa en el ELSE del IF anterior -->
 <ng-template #noAdmin>
