@@ -23,7 +23,7 @@ export class EmpleadosComponent{
         ];
 
         this.trabajador_externo = true;
-        this.color = 'red'; //Según el color que ponga yo aquí el ngSwitch actuará y lo modificará -->
+        this.color = 'blue'; //Según el color que ponga yo aquí el ngSwitch actuará y lo modificará -->
     }
 
     ngOnInit(){

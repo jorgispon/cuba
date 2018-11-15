@@ -3,58 +3,58 @@
 <!-- USO DE LA DIRECTIVA ngIf -->
 <strong>Empleado estrella:</strong>
 <br/><br/>
-<div *ngif="trabajador_externo == true">
+<div *ngIf="trabajador_externo == true">
   <button (click)="cambiarExterno(false)">Mostrar empleado</button>
   <ul>
     <li>{{trabajadores[1].nombre}}</li>
     <li>{{trabajadores[1].edad}}</li>
     <li>{{trabajadores[1].cargo}}</li>
-    <li *ngif="trabajadores[1].contratado == true">Está contratado</li>
-    <li *ngif="trabajadores[1].contratado == false">No está contratado</li>
+    <li *ngIf="trabajadores[1].contratado == true">Está contratado</li>
+    <li *ngIf="trabajadores[1].contratado == false">No está contratado</li>
   </ul>
 </div>
 
-<div *ngif="trabajador_externo == false">
+<div *ngIf="trabajador_externo == false">
   <button (click)="cambiarExterno(true)">Mostrar trabajador</button>
   <ul>
     <li>{{empleado.nombre}}</li>
     <li>{{empleado.edad}}</li>
     <li>{{empleado.cargo}}</li>
-    <li *ngif="empleado.contratado == true">Está contratado</li>
-    <li *ngif="empleado.contratado == false">No está contratado</li>
+    <li *ngIf="empleado.contratado == true">Está contratado</li>
+    <li *ngIf="empleado.contratado == false">No está contratado</li>
   </ul>
 </div>
 
 <h3>Listado de empleados</h3>
 <ul>
-  <li *ngfor="let empleado of trabajadores">
+  <li *ngFor="let empleado of trabajadores">
     <!-- POR CADA TRABAJADOR DEL ARRAY SE CREA UNA VARIABLE EMPLEADO -->
     Empleado:
     <ul>
       <li>{{empleado.nombre}}</li>
       <li>{{empleado.edad}}</li>
       <li>{{empleado.cargo}}</li>
-      <li *ngif="empleado.contratado == true">Está contratado</li>
-      <li *ngif="empleado.contratado == false">No está contratado</li>
+      <li *ngIf="empleado.contratado == true">Está contratado</li>
+      <li *ngIf="empleado.contratado == false">No está contratado</li>
     </ul>
   </li>
 </ul>
 
 <h3>
   Colores switch</h3>
-<ul [ngswitch]="color">
+<ul [ngSwitch]="color">
   <!-- Se pone "'red'" porque lo que espera es un String y se mete mediante comillas simples -->
-  <li *ngswitchcase="''red'" [ngstyle]="{
+  <li *ngSwitchCase="'red'" [ngStyle]="{
       'background':color,
       'color':'white',
       'padding':'20px'}">Es de color ROJO</li>
 
-  <li *ngswitchcase="''green'" [ngstyle]="{
+  <li *ngSwitchCase="'green'" [ngStyle]="{
           'background':color,
           'color':'white',
           'padding':'20px'}">Es de color VERDE</li>
 
-  <li *ngswitchcase="''blue'" [ngstyle]="{
+  <li *ngSwitchCase="'blue'" [ngStyle]="{
               'background':color,
               'color':'white',
               'padding':'20px'}">Es de color AZUL</li>
