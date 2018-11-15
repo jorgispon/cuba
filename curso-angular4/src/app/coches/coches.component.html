@@ -1,7 +1,25 @@
 <h1>Componente de coches</h1>
+<style>
+div{
+    float: left;
+}
+form{
+    width: 200px;
+}
 
+input[type="text"], span{
+    display:block;
+    width: 100%;
+}
+
+.listado{
+    margin-left: 30px;
+}
+</style>
+
+<div>
 <!-- La # es para indicar el nombre del formulario, y el nfForm es para indicar que se trata de un formulario Angular -->
-<form #formCoche="ngForm" (ngSubmit)="onSubmit()">
+<form #formCoche="ngForm" (ngSubmit)="onSubmit(); formCoche.reset();" style="width:200px;">
     <p>
         <label>Nombre: </label>
         <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required>
@@ -14,7 +32,7 @@
         <label>Caballaje: </label>
         <input type="text" name="caballaje" #caballaje="ngModel" [(ngModel)]="coche.caballaje" required pattern="[0-9]+"> <!-- El pattern indica que solo utilice numeros del 0 al 9 y que se repita más de una vez -->
         <span *ngIf="caballaje.touched && !caballaje.valid">
-            El caballaje es incorrecto!
+            El caballaje del coche es incorrecto!
         </span>
     </p>
 
@@ -22,9 +40,19 @@
         <label>Color: </label>
         <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required pattern="[a-zA-Z#]+">
         <span *ngIf="color.touched && !color.valid">
-            El color es incorrecto!
+            El color del coche es incorrecto!
         </span>
     </p>
 
-    <input type="submit" value="Guardar">
+    <input type="submit" value="Guardar" [disabled]="!formCoche.form.valid">
 </form>
+</div>
+
+<div class="listado">
+    <h4>Listado de coches</h4>
+    <ul>
+        <li *ngFor="let coche of coches">
+            {{coche.nombre}} - {{coche.caballaje}} - {{coche.color}}
+        </li>
+    </ul>
+</div>
