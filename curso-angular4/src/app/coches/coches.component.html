@@ -1,0 +1,21 @@
+<h1>Componente de coches</h1>
+
+<!-- La # es para indicar el nombre del formulario, y el nfForm es para indicar que se trata de un formulario Angular -->
+<form #formCoche="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+        <label>Nombre: </label>
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="coche.nombre" required>
+    </p>
+
+    <p>
+        <label>Caballaje: </label>
+        <input type="text" name="caballaje" #caballaje="ngModel" [(ngModel)]="coche.caballaje" required>
+    </p>
+
+    <p>
+        <label>Color: </label>
+        <input type="text" name="color" #color="ngModel" [(ngModel)]="coche.color" required>
+    </p>
+
+    <input type="submit" value="Guardar">
+</form>
