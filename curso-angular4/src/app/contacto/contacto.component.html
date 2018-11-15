@@ -1,1 +1,5 @@
 <h2>{{titulo}}</h2>
+<!-- Con este ngIf lo que hacemos es ver si el parametro de la URL viene informado, si viene se muestra, sino no.-->
+<div *ngIf="parametro">
+    Parámetro de la URL: {{parametro}}
+</div>
