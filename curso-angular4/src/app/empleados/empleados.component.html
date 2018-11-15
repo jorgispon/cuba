@@ -78,7 +78,10 @@
 <!-- Si probamos lo que hay justo debajo, no hará lo de BordeAzul ya que el style.border es prioritario, para ello en el CSS le ponemos a la clase BordeAzul un !important -->
 <pre
     [style.border]="color_seleccionado == 'red' ? '5px solid black' : '5px solid white'"
-    [class.fondoAzul]="color_seleccionado == 'blue'"
+    [ngClass]="{
+        fondoAzul: color_seleccionado == 'blue',
+        fondoVerde: color_seleccionado == 'green'
+    }"
 > <!-- Si es rojo ponme un borde negro, sino, ponlo blanco -->
     <strong>Color elegido:</strong>
     {{color_seleccionado}}
