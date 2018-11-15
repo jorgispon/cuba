@@ -24,7 +24,7 @@ export class FrutaComponent{
     }
 
     ngOnInit(){ //PRIMER MÉTODO QUE SE LANZA TRAS EL CONSTRUCTOR, IDEAL PARA LLAMADAS AJAX A SERVICIOS Y COSAS ASÍ
-        this.cambiarNombre(); //NO ES UNA BUENA PRÁCTICA LLAMAR A LOS MÉTODOS DENTRO DEL CONSTRUCTOR, PARA ELLO TENEMOS EL MÉTODO ngOnInit
+        this.cambiarNombre('JORDI'); //NO ES UNA BUENA PRÁCTICA LLAMAR A LOS MÉTODOS DENTRO DEL CONSTRUCTOR, PARA ELLO TENEMOS EL MÉTODO ngOnInit
         this.cambiarEdad(45);
         console.log(this.nombre + " tiene " + this.edad + " años.");
 

@@ -12,16 +12,18 @@ export class EmpleadosComponent{
     public empleado:Empleado;
     public trabajadores:Array<Empleado>;
     public trabajador_externo:boolean;
+    public color:string;
 
     constructor(){
         this.empleado = new Empleado('Jordi Gisbert Ponsoda', 23, 'Programador', true);
         this.trabajadores = [
-                new Empleado('Jordi Gisbert Ponsoda', 23, 'Programador', true);
-                new Empleado('Manolo Martínez Valero', 35, 'Administrativo', false);
-                new Empleado('Ana Serrano Fernández', 37, 'Directiva', true);
+                new Empleado('Jordi Gisbert Ponsoda', 23, 'Programador', true),
+                new Empleado('Manolo Martínez Valero', 35, 'Administrativo', false),
+                new Empleado('Ana Serrano Fernández', 37, 'Directiva', true)
         ];
 
         this.trabajador_externo = true;
+        this.color = 'red'; //Según el color que ponga yo aquí el ngSwitch actuará y lo modificará -->
     }
 
     ngOnInit(){
