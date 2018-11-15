@@ -12,9 +12,13 @@ export class HomeComponent{
     public listado_ropa:Array<string>;
     public prenda_a_guardar:string;
 
+    public fecha;
+
     constructor(
         private _ropaService: RopaService;
-    ){}
+    ){
+        this.fecha = new Date(2018, 10, 15); //Para el mes hay que saber que comienza en 0, es decir, 0 = enero, por lo que 10 = noviembre.
+    }
 
     ngOnInit(){
         this.listado_ropa = this._ropaService.getRopa();
