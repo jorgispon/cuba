@@ -1,4 +1,4 @@
-package com.jgisberp.springboot.jsp;
+package com.jgisberp.springboot.app;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.jgisberp.springboot.jsp;
+package com.jgisberp.springboot.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

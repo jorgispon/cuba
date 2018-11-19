@@ -1,4 +1,4 @@
-package com.jgisberp.springboot.jsp.controllers;
+package com.jgisberp.springboot.app.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
