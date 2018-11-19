@@ -3,6 +3,7 @@ package com.jgisberp.springboot.jsp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//ESTA ES POR DECIRLO DE ALGUNA FORMA, ES LA PRINCIPAL DEL PROYECTO, LA MÁS IMPORTANTE
 @SpringBootApplication
 public class SpringBootWebJspApplication {
 
