@@ -8,10 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="clientes")
@@ -31,12 +32,8 @@ public class Cliente implements Serializable{
 	// En este atributo si ponemos la anotación @Column, porque el atributo es "createAt" y la columna "create_at"
 	@Column(name="create_at")
 	@Temporal(TemporalType.DATE) // Para convertir la fecha en el tipo que queramos.
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date createAt;
-	
-	@PrePersist
-	public void prePersist() {
-		createAt = new Date();
-	}
 	
 	public Long getId() {
 		return id;
