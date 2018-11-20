@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -30,7 +29,6 @@ public class ClienteDaoImpl implements IClienteDao {
 	}
 
 	@Override
-	@Transactional
 	public void save(Cliente cliente) { // También es el método para editar un cliente.
 
 		if (cliente.getId() != null && cliente.getId() > 0) {
@@ -41,7 +39,6 @@ public class ClienteDaoImpl implements IClienteDao {
 	}
 
 	@Override
-	@Transactional
 	public void delete(Long id) {
 		em.remove(findOne(id));
 	}
